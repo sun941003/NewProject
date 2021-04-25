@@ -1,0 +1,84 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.NewProject" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <!-- font style -->
+        <item name="android:buttonStyle">@style/CustomFontButtonStyle</item>
+        <item name="android:checkboxStyle">@style/CustomFontCheckboxStyle</item>
+        <item name="android:editTextStyle">@style/CustomFontEditTextStyle</item>
+        <item name="editTextStyle">@style/CustomFontEditTextStyle</item>
+        <item name="android:radioButtonStyle">@style/CustomFontRadioButtonStyle</item>
+        <item name="android:textViewStyle">@style/CustomFontTextViewStyle</item>
+    </style>
+    <!-- 커스텀 테마 -->
+    <style name="Theme.MainTheme" parent="Theme.NewProject">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="statusBarBackground">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+    <style name="Theme.SkyTheme" parent="Theme.MainTheme">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/sky_A4FFFF</item>
+        <item name="statusBarBackground">@color/white</item>
+    </style>
+    <style name="Theme.GreenTheme" parent="Theme.MainTheme">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/grren_98F791</item>
+        <item name="statusBarBackground">@color/white</item>
+    </style>
+
+    <style name="dialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert"/>
+
+    <!-- font style setting -->
+    <style name="CustomFontButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:fontFamily">@font/font</item>
+    </style>
+    <style name="CustomFontCheckboxStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/font</item>
+    </style>
+    <style name="CustomFontEditTextStyle" parent="@android:style/Widget.DeviceDefault.EditText">
+        <item name="android:fontFamily">@font/font</item>
+    </style>
+    <style name="CustomFontRadioButtonStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/font</item>
+    </style>
+    <style name="CustomFontTextViewStyle" parent="@android:style/Widget.DeviceDefault.TextView">
+        <item name="android:fontFamily">@font/font</item>
+    </style>
+
+    <style name="side_menu_default_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/bg_outline_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="side_menu_default_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_202020</item>
+        <item name="android:fontFamily">@font/noto_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="login_edit_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_login_edit_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHint">@color/gray_dadee2</item>
+        <item name="android:textColor">@color/black_202020</item>
+        <item name="android:elevation" tools:targetApi="lollipop">4dp</item>
+    </style>
+</resources>

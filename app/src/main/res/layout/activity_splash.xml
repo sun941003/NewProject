@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+                name="view"
+                type="com.example.newproject.view.ui.splash.SplashActivity"/>
+        <variable
+                name="vm"
+                  type="com.example.newproject.view.ui.splash.SplashViewModel"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+        <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+            >
+                <com.example.newproject.view.custom.IssueListCustomView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+
+                <TextView
+                        android:layout_marginTop="50dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_medium"
+                        android:text="Lotto Simulator"
+                        android:textColor="@color/black_202020"
+                        android:textSize="36sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

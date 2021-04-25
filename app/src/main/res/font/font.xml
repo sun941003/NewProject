@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family>
+    <font xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res_auto"
+        android:font="@font/noto_regular"
+        android:fontStyle="normal"
+        android:fontWeight="300"
+        app:font="@font/noto_regular"
+        app:fontWeight="300" />
+    <font xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res_auto"
+        android:font="@font/noto_bold"
+        android:fontStyle="normal"
+        android:fontWeight="600"
+        app:font="@font/noto_bold"
+        app:fontWeight="600" />
+</font-family>

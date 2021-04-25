@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NewProject</string>
+    <string name="nickname_input_text">- 님 환영합니다.</string>
+    <string name="goto_my_page">마이페이지 보기</string>
+    <string name="sign_up">회원가입</string>
+    <string name="emain_confirm">이메일 확인</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="view"
+                type="com.example.newproject.view.ui.main.MainActivity"/>
+        <variable
+                name="vm"
+                type="com.example.newproject.view.ui.main.MainViewModel"/>
+        <import type="com.example.newproject.view.ui.base.ToolbarNavigator"/>
+        <import type="android.view.View"/>
+    </data>
+    <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/dl_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:openDrawer="end">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <include
+                    layout="@layout/layout_toolbar_white"
+                    app:navigator="@{(ToolbarNavigator)view}"
+                    app:title="@{@string/app_name}"
+                    app:leftMenu="@{@drawable/ic_outline_dehaze_24}"
+            />
+
+            <com.example.newproject.view.custom.NicknameCustomView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+            </com.example.newproject.view.custom.NicknameCustomView>
+
+
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView
+                android:id="@+id/side_navigator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true">
+            <include
+                    layout="@layout/layout_side_menu"
+                    app:view="@{view}"
+                    app:vm="@{vm}"/>
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
