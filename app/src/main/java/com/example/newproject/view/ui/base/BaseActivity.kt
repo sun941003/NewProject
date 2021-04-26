@@ -12,8 +12,11 @@ import com.example.newproject.App
 import com.example.newproject.dialog.AlertDialog
 import com.example.newproject.util.DialogUtil
 import com.example.newproject.BR
+import com.example.newproject.view.ui.login.LoginActivity
 import com.example.newproject.view.ui.splash.SplashActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 
@@ -26,7 +29,9 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
     lateinit var mBinding: T
     var progresDialog: ProgressDialog? = null
 
-    lateinit var auth:FirebaseAuth
+    lateinit var firebaseAuth : FirebaseAuth
+    lateinit var firebaseDatabase :FirebaseDatabase
+    lateinit var reference : DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -136,7 +141,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
 
 
     open fun logOut() {
-//        App.activities.filter { !(it is LoginActivity) }.forEach { finish() }
+        App.activities.filter { !(it is LoginActivity) }.forEach { finish() }
         getViewModel()?.setToken(null)
     }
 
@@ -147,7 +152,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
     }
 
     override fun showLoginDialog() {
-//        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
     fun gotoImageDetail(imageUrl: String?) {

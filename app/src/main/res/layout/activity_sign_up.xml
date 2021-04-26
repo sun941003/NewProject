@@ -25,15 +25,16 @@
                 android:layout_weight="1"
                 android:paddingVertical="20dp"
                 android:orientation="vertical"
-                android:gravity="center"
                 android:clipToPadding="false"
         >
             <LinearLayout android:layout_width="match_parent"
                           android:layout_height="wrap_content"
                           android:orientation="vertical"
                           android:paddingHorizontal="16dp"
+                          android:paddingBottom="10dp"
                           android:clipToPadding="false">
                 <EditText
+                        android:id="@+id/tv_sign_up_email"
                         style="@style/login_edit_text"
                         android:hint="이메일을 입력해주세요."
                         android:text="@={vm.signUpEmail}"
@@ -58,33 +59,72 @@
                             android:textColor="@color/red_FF2424"
                             android:layout_marginLeft="4dp"
                             android:textSize="12sp"
-                            android:text="비밀번호가 동일하지 않습니다."
+                            android:text="@{vm.emailErrorText}"
                     />
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardElevation="4dp"
-                        android:layout_gravity="end"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginBottom="10dp"
-                        android:onClick="@{()->vm.emailCheck()}"
-                        app:cardCornerRadius="6dp">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        app:cardElevation="4dp"-->
+<!--                        android:layout_gravity="end"-->
+<!--                        android:layout_marginRight="8dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        app:cardCornerRadius="6dp">-->
 
-                <TextView
-                        android:layout_width="wrap_content"
+<!--                <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingHorizontal="10dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:fontFamily="@font/noto_medium"-->
+<!--                        android:background="@drawable/bg_sky_button"-->
+<!--                        android:textColor="@color/black_202020"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:text="@string/emain_confirm"/>-->
+<!--                </androidx.cardview.widget.CardView>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="10dp"
+                android:clipToPadding="false">
+
+                <EditText
+                        android:id="@+id/tv_sign_up_nickname"
+                    style="@style/login_edit_text"
+                    android:hint="@string/nickname_hint"
+                android:text="@={vm.signUpNickname}"/>
+                <LinearLayout
+                        android:layout_marginTop="4dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingHorizontal="10dp"
-                        android:layout_gravity="center"
-                        android:paddingVertical="10dp"
-                        android:fontFamily="@font/noto_medium"
-                        android:background="@drawable/bg_sky_button"
-                        android:textColor="@color/black_202020"
-                        android:textSize="16sp"
-                        android:text="@string/emain_confirm"/>
-                </androidx.cardview.widget.CardView>
+                        android:orientation="horizontal"
+                        android:clipToPadding="false"
+                        android:gravity="center_vertical"
+                        android:visibility="@{vm.validNickname?View.GONE:View.VISIBLE,default=gone}"
+                >
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_outline_highlight_off_24"
+                            app:tint="@color/red_FF2424"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red_FF2424"
+                            android:layout_marginLeft="4dp"
+                            android:textSize="12sp"
+                            android:text="@string/empty_nickname"
+                    />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -96,8 +136,10 @@
                     android:paddingBottom="10dp"
                     android:clipToPadding="false">
                 <EditText
+                        android:id="@+id/tv_sign_up_password"
                         style="@style/login_edit_text"
-                        android:hint="비밀번호 입력 (영문, 숫자, 특수문자 포함 8~20자)"/>
+                        android:hint="@string/password_hint"
+                android:text="@={vm.signUpPassword}"/>
 
                 <LinearLayout
                         android:layout_marginTop="4dp"
@@ -120,7 +162,7 @@
                             android:textColor="@color/red_FF2424"
                             android:layout_marginLeft="4dp"
                             android:textSize="12sp"
-                            android:text="비밀번호는 영문, 숫자, 특수문자의 조합해주세요. (8~20자 사이)"
+                            android:text="@string/password_hint"
                     />
                 </LinearLayout>
             </LinearLayout>
@@ -134,8 +176,10 @@
                     android:paddingBottom="10dp"
                     android:clipToPadding="false">
                 <EditText
+                        android:id="@+id/tv_sign_up_password_confirm"
                         style="@style/login_edit_text"
-                        android:hint="비밀번호 확인"/>
+                        android:hint="비밀번호 확인"
+                android:text="@={vm.signUpPasswordConfirm}"/>
                 <LinearLayout
                         android:layout_marginTop="4dp"
                         android:layout_width="match_parent"
@@ -156,7 +200,7 @@
                             android:textColor="@color/red_FF2424"
                             android:layout_marginLeft="4dp"
                             android:textSize="12sp"
-                            android:text="비밀번호가 동일하지 않습니다."
+                            android:text="@{vm.passwordConfirmErrorText}"
                     />
                 </LinearLayout>
 
@@ -183,6 +227,7 @@
                     android:textColor="@color/black_202020"
                     android:fontFamily="@font/noto_medium"
                     android:background="@drawable/bg_sky_button"
+                    android:onClick="@{()->vm.createUserToFirebase()}"
             />
         </androidx.cardview.widget.CardView>
 

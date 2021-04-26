@@ -15,7 +15,6 @@ open class BaseViewModel : ViewModel() {
         val userNickName = MutableLiveData("")
     }
     lateinit var baseNavigator: BaseNavigator
-    lateinit var firebaseAuth : FirebaseAuth
 
 
 

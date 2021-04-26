@@ -35,6 +35,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(),SplashNavigator {
 
     override fun gotoLogin() {
         startActivity(Intent(this,LoginActivity::class.java))
-        showToast("로그인 화면 미구현")
+        finish()
     }
 }

@@ -19,6 +19,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     }
 
+
+
     override fun onBackPressed() {
         if (mBinding.dlDrawer.isDrawerOpen(GravityCompat.START)) {
             mBinding.dlDrawer.closeDrawer(GravityCompat.START)

@@ -26,10 +26,12 @@
         <item name="colorPrimaryVariant">@color/white</item>
         <item name="statusBarBackground">@color/white</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowSoftInputMode">adjustUnspecified|adjustPan</item>
     </style>
     <style name="Theme.SkyTheme" parent="Theme.MainTheme">
         <item name="android:statusBarColor" tools:targetApi="l">@color/sky_A4FFFF</item>
         <item name="statusBarBackground">@color/white</item>
+        <item name="android:windowSoftInputMode">adjustUnspecified|adjustPan</item>
     </style>
     <style name="Theme.GreenTheme" parent="Theme.MainTheme">
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/grren_98F791</item>

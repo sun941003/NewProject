@@ -30,12 +30,10 @@
                     app:leftMenu="@{@drawable/ic_outline_dehaze_24}"
             />
 
-            <com.example.newproject.view.custom.NicknameCustomView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-            </com.example.newproject.view.custom.NicknameCustomView>
+            <TextView
+                style="@style/side_menu_default_button"
+                android:text="로그아웃"
+                android:onClick="@{()->view.logOut()}"/>
 
 
         </LinearLayout>
