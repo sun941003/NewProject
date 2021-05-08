@@ -7,6 +7,8 @@ import com.example.newproject.R
 import com.example.newproject.databinding.ActivityMainBinding
 import com.example.newproject.view.ui.base.BaseActivity
 import com.example.newproject.view.ui.base.BaseViewModel
+import com.google.firebase.auth.UserInfo
+import com.google.firebase.ktx.Firebase
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -14,6 +16,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_main
 
     override fun getViewModel(): BaseViewModel? = vm
+    /*
+    까먹기 전에 미리 정리해놓기
+    로그인, 회원가입, 토큰까진 됨
+    -> db에서 유저 정보 받아오는 부분 남음 -> firebase realtimedatabase로 되있을꺼임
+
+     */
 
     override fun init() {
 
@@ -31,6 +39,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onLeftButtonClick() {
         mBinding.dlDrawer.openDrawer(GravityCompat.START)
+    }
+
+    fun loadUserInfo(){
+        reference = firebaseDatabase.reference
+        vm.getToken().value?.let{
+
+        }
     }
 
 //    override fun onRightButtonClick() {
