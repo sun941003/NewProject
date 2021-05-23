@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.newproject.App
+import com.example.newproject.model.model.User
 import com.example.newproject.util.SharedPreferenceUtil
 import com.google.firebase.auth.FirebaseAuth
 import java.util.ArrayList
@@ -12,10 +13,14 @@ import java.util.ArrayList
 open class BaseViewModel : ViewModel() {
     companion object {
         val token = MutableLiveData<String?>(SharedPreferenceUtil.getToken())
+        val userInfo = MutableLiveData<User>()
         val userNickName = MutableLiveData("")
     }
     lateinit var baseNavigator: BaseNavigator
 
+    fun setUserInfo(user : User){
+        Companion.userInfo.value = user
+    }
 
 
     fun setToken(token: String?) {

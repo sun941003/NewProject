@@ -2,14 +2,22 @@ package com.example.newproject.view.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.EventLog
 import androidx.core.view.GravityCompat
 import com.example.newproject.R
 import com.example.newproject.databinding.ActivityMainBinding
+import com.example.newproject.model.model.User
 import com.example.newproject.view.ui.base.BaseActivity
 import com.example.newproject.view.ui.base.BaseViewModel
 import com.google.firebase.auth.UserInfo
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import retrofit2.http.POST
+import java.util.*
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     val vm: MainViewModel by viewModel()
@@ -24,8 +32,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
      */
 
     override fun init() {
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        reference = firebaseDatabase.reference
+
+
+
+
+
+
+
+
 
     }
+
 
 
 
@@ -42,10 +61,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun loadUserInfo(){
-        reference = firebaseDatabase.reference
-        vm.getToken().value?.let{
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        reference = firebaseDatabase.getReference()
 
-        }
+        reference.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+
     }
 
 //    override fun onRightButtonClick() {

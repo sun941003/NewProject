@@ -40,6 +40,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() , LoginNavigator {
             if(it.isSuccessful){
                 vm.setToken(it.getResult()!!.token)
                 mUser.displayName
+
                 startActivity(Intent(this,MainActivity::class.java))
                 finish()
             }else{

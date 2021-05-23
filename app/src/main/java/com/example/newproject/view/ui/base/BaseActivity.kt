@@ -15,6 +15,7 @@ import com.example.newproject.BR
 import com.example.newproject.view.ui.login.LoginActivity
 import com.example.newproject.view.ui.splash.SplashActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -32,6 +33,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
     lateinit var firebaseAuth : FirebaseAuth
     lateinit var firebaseDatabase :FirebaseDatabase
     lateinit var reference : DatabaseReference
+    lateinit var firebaseUser : FirebaseUser
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +46,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
         mBinding.lifecycleOwner = this
         mBinding.setVariable(BR.view, this)
         initViewModel(getViewModel())
+        //firebase 설정
         init()
     }
 
