@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+                name="view"
+                type="com.example.newproject.view.custom.CircleView"/>
+    </data>
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical">
+
+        <net.soulwolf.widget.ratiolayout.widget.RatioTextView
+                android:id="@+id/rtv_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:widthRatio="1"
+                app:heightRatio="1"
+                android:text="@{String.valueOf(view.centerNumber)}"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+        />
+
+    </LinearLayout>
+</layout>

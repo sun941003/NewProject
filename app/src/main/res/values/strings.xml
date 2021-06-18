@@ -15,4 +15,6 @@
     <string name="nickname_hint">닉네임을 입력해주세요.(특수문자 제외 2~20자)</string>
     <string name="password_confirm_error">비밀번호를 확인해주세요.</string>
     <string name="login_error_message">로그인에 실패했습니다.\n아이디와 비밀번호를 확인해주세요.</string>
+    <string name="back_press">앱을 종료 하시겠습니까?</string>
+    <string name="failed_connection">통신에 실패했습니다.\n네트워크 연결을 확인해주세요.</string>
 </resources>

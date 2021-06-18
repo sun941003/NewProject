@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+                name="view"
+                type="com.example.newproject.view.ui.my_page.MyPageActivity"/>
+        <variable
+                name="vm"
+                type="com.example.newproject.view.ui.my_page.MyPageViewModel"/>
+    </data>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              android:paddingVertical="20dp"
+              android:gravity="center"
+            android:onClick="@{()->view.gotoUpdatePassword()}"
+            android:text="비밀번호 변경"
+            />
+
+    <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              android:paddingVertical="20dp"
+              android:gravity="center"
+              android:text="내 기록"/>
+
+
+</LinearLayout>
+</layout>

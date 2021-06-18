@@ -13,6 +13,7 @@ object DialogUtil {
     ): AlertDialog {
         preAlert?.dismiss()
         return AlertDialog(context as Activity).apply {
+            mBinding.tvConfirm.text = "확인"
             setContents(content)
             this.onConfirmClick = onConfirmClick
             show()
@@ -28,6 +29,8 @@ object DialogUtil {
     ): AlertDialog {
         selectableDialog?.dismiss()
         return AlertDialog(context as Activity, true).apply {
+            mBinding.tvConfirm.text = "확인"
+            mBinding.tvCancel.text = "취소"
             setContents(content)
             this.onCancelClick = onCancelClick
             this.onConfirmClick = onConfirmClick

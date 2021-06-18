@@ -10,21 +10,21 @@
             android:layout_height="match_parent"
             android:background="@color/white"
             android:orientation="vertical">
-            <com.example.newproject.view.custom.IssueListCustomView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@color/sky_E8FFFF"
-                    android:orientation="vertical"/>
+        <com.example.newproject.view.custom.IssueListCustomView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/sky_E8FFFF"
+                android:orientation="vertical"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                      android:orientation="vertical"
+                android:orientation="vertical"
                 android:background="@color/sky_E8FFFF"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp"
-        android:clipToPadding="false">
+                android:paddingHorizontal="16dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:clipToPadding="false">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -32,36 +32,9 @@
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     app:inputText="@{@string/nickname_input_text}"
-                    app:replaceText="@{vm.userNickname}"
+                    app:replaceText="@{vm.test3}"
                     app:spanTextColor="@{@color/blue_1312FF}"
             />
-
-            <androidx.cardview.widget.CardView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center_horizontal"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="6dp"
-            >
-            <LinearLayout
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:onClick="@{()->view.loadUserInfo()}"
-                    style="@style/side_menu_default_button">
-
-                <ImageButton
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:src="@drawable/ic_outline_account_circle_24"
-                        android:clickable="false"
-                android:backgroundTint="@color/white"/>
-
-                <TextView
-                        style="@style/side_menu_default_text"
-                          android:text="@string/goto_my_page"/>
-
-            </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                     android:layout_marginTop="10dp"
@@ -74,6 +47,7 @@
                 <LinearLayout
                         android:layout_gravity="center_vertical"
                         android:gravity="center"
+                        android:onClick="@{()->view.gotoMyPage()}"
                         style="@style/side_menu_default_button">
 
                     <ImageButton
@@ -88,6 +62,50 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="6dp"
+            >
+                <LinearLayout
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:onClick="@{()->view.gotoTest()}"
+                        style="@style/side_menu_default_button">
+
+                    <ImageButton
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:src="@drawable/ic_outline_account_circle_24"
+                            android:clickable="false"
+                            android:backgroundTint="@color/white"/>
+
+                    <TextView
+                            style="@style/side_menu_default_text"
+                            android:text="@string/goto_my_page"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black_202020"
+                    android:text="로그아웃"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:onClick="@{()->view.logOut()}"
+            />
         </LinearLayout>
 
 

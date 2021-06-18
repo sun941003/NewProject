@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.newproject">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:allowBackup="true"
             android:name=".App"
@@ -20,7 +22,6 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
         <activity android:name=".view.ui.login.LoginActivity"
                   android:theme="@style/Theme.GreenTheme"
@@ -29,6 +30,21 @@
         <activity android:name=".view.ui.sign_up.SignUpActivity"
                   android:theme="@style/Theme.SkyTheme"
                   android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".view.ui.my_page.MyPageActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/Theme.MainTheme">
+        </activity>
+        <activity android:name=".view.ui.update_password.UpdatePasswordAcitivty"
+                  android:screenOrientation="portrait">
+        </activity>
+
+
+
+        <!-- 찐 테스트 화면 -->
+        <activity android:name=".view.ui.test_activity.TestActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/Theme.MainTheme">
         </activity>
     </application>
 

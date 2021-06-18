@@ -30,10 +30,53 @@
                     app:leftMenu="@{@drawable/ic_outline_dehaze_24}"
             />
 
-            <TextView
-                style="@style/side_menu_default_button"
-                android:text="로그아웃"
-                android:onClick="@{()->view.logOut()}"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="10dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                >
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="@color/black_434343"
+                            android:text="이번주 당첨번호"
+                    />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="8dp"
+                            android:layout_gravity="center"
+                            android:paddingRight="20dp"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/outline_double_arrow_20"/>
+
+                        <com.example.newproject.view.custom.CircleView
+                                android:layout_marginLeft="4dp"
+                                android:id="@+id/cv_main_number1"
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
         </LinearLayout>
