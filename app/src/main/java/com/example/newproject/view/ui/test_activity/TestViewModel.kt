@@ -1,6 +1,7 @@
 package com.example.newproject.view.ui.test_activity
 
 import androidx.lifecycle.MutableLiveData
+import com.example.newproject.model.model.JsonData
 import com.example.newproject.model.model.LottoOriginalData
 import com.example.newproject.model.model.NetworkApiResponse
 import com.example.newproject.model.repo.Result
@@ -17,6 +18,8 @@ class TestViewModel(val networkRepository: NetworkRepository) : BaseViewModel() 
     var timesResult = 1
 
     val testData = MutableLiveData<LottoOriginalData>()
+    val testText = MutableLiveData("")
+    val testArray = MutableLiveData<ArrayList<JsonData>>()
 
 
 }

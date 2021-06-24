@@ -32,7 +32,7 @@
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     app:inputText="@{@string/nickname_input_text}"
-                    app:replaceText="@{vm.test3}"
+                    app:replaceText="@{vm.userNickname}"
                     app:spanTextColor="@{@color/blue_1312FF}"
             />
 

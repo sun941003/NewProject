@@ -29,13 +29,14 @@ class CircleView @JvmOverloads constructor(
 
     val paint  : Paint = Paint()
     var radius = 0f
-    val centerNumber = MutableLiveData<Int>(0)
+    val centerNumber = MutableLiveData("")
     lateinit var mBinding : ItemNumberBallBinding
 
 
     init {
 
-//      val color1 = App.instance.getColor(R.color.color_1)
+//      val color = App.instance.getColor(R.color.white)
+//        paint.color = color
 //        paint.style = Paint.Style.FILL
         initView()
     }
@@ -54,23 +55,23 @@ class CircleView @JvmOverloads constructor(
         super.onDraw(canvas)
         val wid = width.toFloat()
         val hei = height.toFloat()
-        radius = wid/9
-        canvas?.drawCircle(wid/18*15,hei/2,radius,paint)
+        radius = wid/10*6
+        canvas?.drawCircle(wid/2,hei/2,radius,paint)
     }
 
-    fun setColorForm(sourceNumber : Int){
+    fun setColorForm(sourceNumber : String){
         centerNumber.value = sourceNumber
-        if(sourceNumber<11){
-            paint.color = App.instance.getColor(R.color.color_1)
-        }else if (sourceNumber<21){
-            paint.color = App.instance.getColor(R.color.color_2)
-        }else if(sourceNumber<31){
-            paint.color = App.instance.getColor(R.color.color_3)
-        }else if(sourceNumber<41){
-            paint.color = App.instance.getColor(R.color.color_4)
-        }else{
-            paint.color = App.instance.getColor(R.color.color_5)
-        }
+//        if(sourceNumber<11){
+//            paint.color = App.instance.getColor(R.color.color_1)
+//        }else if (sourceNumber<21){
+//            paint.color = App.instance.getColor(R.color.color_2)
+//        }else if(sourceNumber<31){
+//            paint.color = App.instance.getColor(R.color.color_3)
+//        }else if(sourceNumber<41){
+//            paint.color = App.instance.getColor(R.color.color_4)
+//        }else{
+//            paint.color = App.instance.getColor(R.color.color_5)
+//        }
 
     }
 }

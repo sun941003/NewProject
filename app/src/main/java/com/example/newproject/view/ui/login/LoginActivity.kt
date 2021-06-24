@@ -28,8 +28,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() , LoginNavigator {
         //이거 제대로 잡았으니까 UI 랑 dialog 버튼 같은데 색상값도 잡아놔야함
         //지금 현재 디자인 굉장히 개같아 보임 너무 심심해보이거나 조화롭지 않음 -> 이건 수정을 하던지 아니면 통일성을 줘야할듯
         //여기는 로그인, 회원가입 둘다 가능하니까 이쪽에서 작업 계속하면 될듯
-
-
     }
     fun gotoSignUp(){
         startActivity(Intent(this,SignUpActivity::class.java))
@@ -44,7 +42,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() , LoginNavigator {
         mUser.getIdToken(true).addOnCompleteListener(this){
             if(it.isSuccessful){
                 vm.setToken(it.getResult()!!.token)
-                vm.setUserInfo(User(mUser.uid,"test",mUser.email)) // 여기서 닉네임 값을 잡아와야되는데 모르겠음
                 startActivity(Intent(this,MainActivity::class.java))
                 finish()
             }else{

@@ -1,6 +1,7 @@
 package com.example.newproject.view.ui.main
 
 import androidx.lifecycle.MutableLiveData
+import com.example.newproject.model.model.LottoData
 import com.example.newproject.view.ui.base.BaseViewModel
 import java.text.SimpleDateFormat
 
@@ -9,7 +10,11 @@ class MainViewModel : BaseViewModel(){
     val test2 = MutableLiveData("")
     val test3 = MutableLiveData("")
 
-    val currentTimesCount = MutableLiveData<Int>()
+
+
+    var currentTimesCount =0
+    val test = MutableLiveData<LottoData>()
+    val currentTimesNumbers = MutableLiveData<LottoData>()
 
     fun dateCalculator() : Int{
         val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")

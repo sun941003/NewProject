@@ -16,6 +16,9 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>() {
     override fun getViewModel(): BaseViewModel? = vm
 
     override fun init() {
+        //비밀번호 변경, 내 정보 확인,
+
+
 
 
         

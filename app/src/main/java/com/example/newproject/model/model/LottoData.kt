@@ -1,13 +1,24 @@
 package com.example.newproject.model.model
 
 data class LottoData(
-    val times: Int,
-    val num1: Int,
-    val num2: Int,
-    val num3: Int,
-    val num4: Int,
-    val num5: Int,
-    val num6: Int,
-    val bonus: Int?
+    val count_1 : String,
+    val money_1 : String,
+    val count_2 : String,
+    val money_2 : String,
+    val count_3 : String,
+    val money_3 : String,
+    val count_4 : String,
+    val money_4 : String,
+    val count_5 : String,
+    val money_5 : String,
+    val date : String,
+    val num1: String,
+    val num2: String,
+    val num3: String,
+    val num4: String,
+    val num5: String,
+    val num6: String,
+    val bonus: String?,
+    val times: String
 )
 

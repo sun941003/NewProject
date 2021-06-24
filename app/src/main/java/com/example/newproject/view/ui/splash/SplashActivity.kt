@@ -46,8 +46,11 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(),SplashNavigator {
 //        })
 
         Handler(Looper.getMainLooper()).postDelayed({vm.initApp()},1000)
+        //여기서 baseViewModel에 데이터 저장만 가능하면 좀 늦게 걸려도 한번에 다 끝날꺼 같음
 
     }
+
+
 
     override fun gotoMain() {
         startActivity(Intent(this,MainActivity::class.java))
@@ -59,10 +62,5 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(),SplashNavigator {
         finish()
     }
 
-    fun checkConnectingDatabase() : String{
-        val presenceRef = firebaseDatabase.getReference("disconnectmessage")
-        presenceRef.onDisconnect().setValue("I disconnected")
 
-        return "I disconnected"
-    }
 }

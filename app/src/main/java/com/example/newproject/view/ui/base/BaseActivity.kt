@@ -18,7 +18,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.app
+import com.google.firebase.messaging.ktx.messaging
 
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavigator,
@@ -35,6 +38,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
     lateinit var reference : DatabaseReference
     lateinit var firebaseUser : FirebaseUser
     lateinit var mUser : FirebaseUser
+    lateinit var mData : DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,8 +54,11 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
         //firebase 설정
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
+        mData = firebaseDatabase.getReference("Data")
         reference = firebaseDatabase.getReference("Users")
 //        mUser = firebaseAuth.currentUser
+
+
         init()
     }
 
@@ -148,6 +155,22 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
 
     override fun onRightTextClick(){}
 
+
+    fun unsubscribedTopic(){
+        Firebase.messaging.unsubscribeFromTopic("my_app_push").addOnCompleteListener {
+            if (!it.isSuccessful){
+
+            }
+        }
+    }
+
+    fun subscribedTopic(){
+        Firebase.messaging.subscribeToTopic("my_app_push").addOnCompleteListener {
+            if(!it.isSuccessful){
+
+            }
+        }
+    }
 
     open fun logOut() {
         //로그아웃 이상한거 수정 완료 -> 모르면 코드라도 잘 뜯어보기 (LSN때부터 이걸로 개고생했음)
