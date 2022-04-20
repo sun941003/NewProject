@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "947551085628",
+    "firebase_url": "https://changsunproject-default-rtdb.firebaseio.com",
     "project_id": "changsunproject",
     "storage_bucket": "changsunproject.appspot.com"
   },
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "com.example.changsunsideproject",
             "certificate_hash": "329e23f858e78106a1fbf88524da400840c2478c"
+          }
+        },
+        {
+          "client_id": "947551085628-682pb588k1kjjk334l5vkp9aot0p98o7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.changsunsideproject",
+            "certificate_hash": "d3b9d87013a23a4d41e8baec4710208f0ca05fa4"
           }
         },
         {
@@ -67,11 +76,72 @@
       },
       "oauth_client": [
         {
+          "client_id": "947551085628-0htv7m8nmfpet34ls50jllu6jse893ss.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newproject",
+            "certificate_hash": "66c5d6fe1688a27b9a03464da2798c965fa1115b"
+          }
+        },
+        {
           "client_id": "947551085628-0tispa2fpuhj7figcf77kmm6rqote7uj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.newproject",
             "certificate_hash": "5b323fd4caf4c73c4d5603b906bb9f6c407f1b94"
+          }
+        },
+        {
+          "client_id": "947551085628-26dm6q37rl71frk0a3hjkhbvjm4snejg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newproject",
+            "certificate_hash": "343615d28c681daa2ae882d5613bb5fad27c6d2d"
+          }
+        },
+        {
+          "client_id": "947551085628-560lr4ln6ekuam6p4vd0mao2hcfjcs5l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newproject",
+            "certificate_hash": "d3b9d87013a23a4d41e8baec4710208f0ca05fa4"
+          }
+        },
+        {
+          "client_id": "947551085628-2hng1m14oqqedl6tn13br4c6l68clr72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEQJx4xHvD9yA4qDqhWq0Vq89KSuf1pFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947551085628-2hng1m14oqqedl6tn13br4c6l68clr72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947551085628:android:c0bd9b2fb1bc3b38e04f39",
+        "android_client_info": {
+          "package_name": "me.synology.sweetm.changsun2project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947551085628-lqb3h1grd2hksoa775jr6crvcsdeiapf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.synology.sweetm.changsun2project",
+            "certificate_hash": "d3b9d87013a23a4d41e8baec4710208f0ca05fa4"
           }
         },
         {
