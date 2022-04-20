@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+                name="view"
+                type="com.example.newproject.view.ui.test_activity.TestActivity"/>
+        <variable
+                name="vm"
+                type="com.example.newproject.view.ui.test_activity.TestViewModel"/>
+    </data>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_202020"
+            android:textSize="12sp"
+            android:id="@+id/tv_test_json_data"/>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
+</layout>

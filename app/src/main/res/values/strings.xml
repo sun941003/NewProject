@@ -1,7 +1,25 @@
 <resources>
-    <string name="app_name">NewProject</string>
+<!--    <string name="app_name">Lotto Simulator</string>-->
+    <string name="app_name">TestApp</string>
     <string name="nickname_input_text">- 님 환영합니다.</string>
     <string name="goto_my_page">마이페이지 보기</string>
     <string name="sign_up">회원가입</string>
     <string name="emain_confirm">이메일 확인</string>
+    <string name="sign_up_error">입력정보를 확인해주세요.</string>
+    <string name="sign_up_success">회원가입 완료</string>
+    <string name="sign_up_email_error">이미 가입된 이메일 입니다.</string>
+    <string name="empty_nickname">닉네임을 입력해주세요.</string>
+    <string name="email_valid_error">이메일을 확인해주세요.</string>
+    <string name="password_hint">비밀번호는 영문, 숫자, 특수문자를 입력하세요. (8~20자)</string>
+    <string name="password_error">비밀번호는 영문, 숫자, 특수문자의 조합해주세요. (8~20자 사이)</string>
+    <string name="nickname_hint">닉네임을 입력해주세요.(특수문자 제외 2~20자)</string>
+    <string name="password_confirm_error">비밀번호를 확인해주세요.</string>
+    <string name="login_error_message">로그인에 실패했습니다.\n아이디와 비밀번호를 확인해주세요.</string>
+    <string name="back_press">앱을 종료 하시겠습니까?</string>
+    <string name="failed_connection">통신에 실패했습니다.\n네트워크 연결을 확인해주세요.</string>
+
+    <string name="default_notification_id">@string/app_name</string>
+    <string name="default_notification_title">@string/app_name</string>
+    <string name="msg_subscribed">my_app_topic</string>
+    <string name="msg_subscribed_failed">failed_msg</string>
 </resources>

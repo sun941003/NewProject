@@ -13,23 +13,25 @@
         <RelativeLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="200dp"
         >
             <com.example.newproject.view.custom.IssueListCustomView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-            android:onClick="@{()->view.gotoMain()}"/>
+                    android:layout_height="200dp"/>
 
+            <LinearLayout android:layout_width="match_parent" android:layout_height="200dp"
+                          android:orientation="vertical"
+                          android:gravity="center">
             <TextView
-                    android:layout_marginTop="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_medium"
-                    android:text="Lotto Simulator"
+                    android:text="@string/app_name"
                     android:textColor="@color/black_202020"
                     android:textSize="36sp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"/>
+            </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout
@@ -38,24 +40,24 @@
                 android:orientation="vertical"
                 android:clipToPadding="false"
                 android:paddingVertical="30dp"
-                android:paddingHorizontal="16dp"
-                android:layout_marginTop="20dp">
-
-            <View android:layout_width="0dp" android:layout_height="1dp"
-                  android:layout_weight="1"/>
+                android:paddingHorizontal="16dp">
             <EditText
                     style="@style/login_edit_text"
+                    android:text="@={vm.loginEmail}"
+                    android:inputType="text"
                     android:hint="로그인"/>
             <EditText
                     android:layout_marginTop="12dp"
                     style="@style/login_edit_text"
+                    android:text="@={vm.loginPassword}"
+                    android:inputType="textPassword"
                     android:hint="비밀번호"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="30dp"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="10dp"
                     android:clipToPadding="false"
@@ -64,6 +66,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="@{()->vm.registerLogin()}"
                         app:cardElevation="4dp"
                         app:cardCornerRadius="6dp">
                     <TextView
@@ -98,8 +101,27 @@
 
 
             </LinearLayout>
-            <View android:layout_width="0dp" android:layout_height="1dp"
-                  android:layout_weight="2"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginTop="16dp"
+                          android:gravity="center"
+                          >
+                <TextView android:layout_width="0dp" android:layout_height="match_parent"
+                          android:layout_weight="1"
+                          android:gravity="center"
+                          android:paddingVertical="4dp"
+                          />
+                <TextView android:layout_width="0dp" android:layout_height="match_parent"
+                          android:layout_weight="1"
+                          android:text="비밀번호 찾기"
+                          android:gravity="center"
+                          android:paddingVertical="4dp"
+                />
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
 

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.newproject">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:allowBackup="true"
             android:name=".App"
@@ -10,26 +12,60 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.NewProject">
-        <activity android:name=".view.ui.main.MainActivity"
-        android:theme="@style/Theme.GreenTheme">
+        <activity
+                android:name=".view.ui.main.MainActivity"
+                android:theme="@style/Theme.GreenTheme">
         </activity>
-        <activity android:name=".view.ui.splash.SplashActivity"
-                  android:theme="@style/Theme.MainTheme"
-                  android:screenOrientation="portrait">
+        <activity
+                android:name=".view.ui.splash.SplashActivity"
+                android:theme="@style/Theme.MainTheme"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+                android:name=".view.ui.login.LoginActivity"
+                android:theme="@style/Theme.GreenTheme"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".view.ui.sign_up.SignUpActivity"
+                android:theme="@style/Theme.SkyTheme"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".view.ui.my_page.MyPageActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.MainTheme">
+        </activity>
+        <activity
+                android:name=".view.ui.update_password.UpdatePasswordAcitivty"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".view.ui.times_list.ListActivity"
+                android:screenOrientation="portrait">
+        </activity>
 
+
+        <!-- 찐 테스트 화면 -->
+        <activity android:name=".view.ui.test_activity.TestActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/Theme.MainTheme">
         </activity>
-        <activity android:name=".view.ui.login.LoginActivity"
-                  android:theme="@style/Theme.GreenTheme"
-                  android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".view.ui.sign_up.SignUpActivity"
-                  android:theme="@style/Theme.SkyTheme"
-                  android:screenOrientation="portrait">
-        </activity>
+
+
+        <!-- 푸시 알림에 필요한 서비스 추가 -->
+        <service
+                android:name="com.example.newproject.model.fcm.PushMessageService"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
+
 
 </manifest>
