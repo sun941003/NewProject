@@ -22,6 +22,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.ktx.app
 import com.google.firebase.messaging.ktx.messaging
+import java.time.LocalDateTime
 
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavigator,
@@ -39,6 +40,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
     lateinit var firebaseUser : FirebaseUser
     lateinit var mUser : FirebaseUser
     lateinit var mData : DatabaseReference
+    lateinit var start : LocalDateTime
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +59,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseNavi
         mData = firebaseDatabase.getReference("Data")
         reference = firebaseDatabase.getReference("Users")
 //        mUser = firebaseAuth.currentUser
-
+        start = LocalDateTime.of(2002,12,7,20,40,0)
 
         init()
     }
