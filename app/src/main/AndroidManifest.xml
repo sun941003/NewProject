@@ -57,6 +57,11 @@
                   android:theme="@style/Theme.MainTheme">
         </activity>
 
+        <activity android:name=".view.ui.test_keyboard.KeyboardActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
 
         <!-- 푸시 알림에 필요한 서비스 추가 -->
         <service
