@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.EventLog
+import android.util.Log
 import androidx.core.view.GravityCompat
 import com.example.newproject.R
 import com.example.newproject.databinding.ActivityMainBinding
@@ -26,6 +27,9 @@ import com.google.firebase.ktx.Firebase
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import retrofit2.http.POST
 import java.lang.RuntimeException
+import java.time.Duration
+import java.time.LocalDateTime
+import java.time.Period
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -34,10 +38,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_main
 
     override fun getViewModel(): BaseViewModel? = vm
-    /*
-    viewModel에서 firebase쓰기
-
-     */
 
     override fun init() {
 
@@ -46,28 +46,29 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         //firebase setting
         mUser = firebaseAuth.currentUser
 
+
         val user = vm.mAuth.currentUser
         vm.mReference.child("Users").child(user.uid).get().addOnSuccessListener {
             vm.setUserNickname(it.child("nickname").value.toString())
         }
+        initItems()
 
-//        reference.child("Users").child(mUser.uid).child("nickname").get().addOnSuccessListener {
-            //이렇게 복잡하게 child로 타고 다 들어가야됨
-            //db에 데이터 저장 자체가 유저 uid로 저장됨 / 루트 값인 Users값은 내가 회원가입 할때 지정해놓고 저기로 넣어줬음(자동생성)
-            //그리고 파이어베이스 회원가입 타면 실시간 디비에 해당 루투안에 uid 자동생성해서 저장됨
-//            vm.test3.value = it.value.toString()
-            //이후 추가적인 데이터베이스에 레코드 추가할땐 구조화 항목에서 처럼 새로 파지말고 파놓고 그걸 갖다 붙이는 형식으로 사용하면 될듯
-//        }
+        val current = LocalDateTime.now()
+        val secondsDay = (60*60*24).toLong()*7
 
-        showToast("test -> ${BaseViewModel.currentTimes.value}")
-//        showAlertDialog("test --> ${BaseViewModel.jsonData.value!!.get(vm.currentTimesCount).date}")
+        val seconds = Duration.between(start,current).seconds
+
+        val result = seconds/secondsDay +1
+        showToast(result.toString())
+
+
 
     }
 
 
     fun initItems(){
-
         reference.child("data").child(vm.currentTimesCount.toString()).get().addOnSuccessListener {
+            val localList = ArrayList<LottoData>()
             vm.currentTimesNumbers.value = LottoData(
                 it.child("1st_count").value.toString(),
                 it.child("1st_money").value.toString(),
@@ -89,7 +90,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 it.child("no7").value.toString(),
                 it.child("times").value.toString()
             )
+            Log.e("mainLotto","initItems = ${vm.currentTimesNumbers.value}")
         }
+
     }
 
 
@@ -116,17 +119,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         mBinding.dlDrawer.openDrawer(GravityCompat.START)
     }
 
-    fun testFunction() {
-
-    }
-
     fun gotoList(){
         startActivity(Intent(this,ListActivity::class.java))
     }
-
-
-
-//    override fun onRightButtonClick() {
-//        mBinding.dlDrawer.openDrawer(GravityCompat.START)
-//    }
 }

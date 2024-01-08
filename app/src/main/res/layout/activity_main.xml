@@ -72,7 +72,9 @@
                             android:id="@+id/cv_main_number1"
                             android:layout_width="20dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp" />
+                            android:layout_marginLeft="4dp" >
+
+                        </com.example.newproject.view.custom.CircleView>
 
 
                     </LinearLayout>

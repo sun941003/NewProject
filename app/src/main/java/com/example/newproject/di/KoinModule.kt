@@ -9,6 +9,7 @@ import com.example.newproject.view.ui.my_page.MyPageViewModel
 import com.example.newproject.view.ui.sign_up.SignUpViewModel
 import com.example.newproject.view.ui.splash.SplashViewModel
 import com.example.newproject.view.ui.test_activity.TestViewModel
+import com.example.newproject.view.ui.test_keyboard.KeyboardViewModel
 import com.example.newproject.view.ui.times_list.ListViewModel
 import com.example.newproject.view.ui.update_password.UpdatePasswordViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -23,6 +24,7 @@ val mvvmModule = module {
     viewModel { UpdatePasswordViewModel() }
     viewModel { ListViewModel() }
     viewModel { TestViewModel(get()) } // 얘는 찐 테스트 화면
+    viewModel { KeyboardViewModel() }
 }
 val serviceModule = module {
     //factory는 요청시 마다 새로운 인스턴스 생성, single은 단일 인스턴스를 반환
